@@ -56,7 +56,7 @@
     margin: 0;
 }
 
-#home-main-section p {
+#home-main-section p:nth-child(4) {
     font-family: "Playfair Display", serif;
     color: rgb(227, 226, 222);
     font-style: italic;
@@ -75,4 +75,22 @@
     text-decoration: none;
     letter-spacing: 0.1vw;
     margin: 6vw 0 0 0;
+}
+
+#home-main-section p {
+    font-family: "Playfair Display", serif;
+    color: rgb(227, 226, 222, 0.5);
+    letter-spacing: 0.5vw;
+    font-style: italic;
+    font-size: 2vw;
+    margin: 0 0 2.5vw 0;
+}
+
+#home-main-section p:nth-child(5) {
+    font-family: "Playfair Display", serif;
+    color: rgb(227, 226, 222, 0.5);
+    letter-spacing: 0.5vw;
+    font-style: italic;
+    font-size: 3vw;
+    margin: 4vw 0 0 0;
 }
