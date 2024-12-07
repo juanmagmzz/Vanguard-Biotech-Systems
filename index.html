@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
-    <script src="{{ url_for('static', filename='js/layout.js') }}"></script>
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="static/js/layout.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,14 @@
 
     <section id="layout-content-block">
 
-        {% block content %} {% endblock %}
+        <section id="home-main-section">
 
+            <h1>VANGUARD</h1>
+            <h2>BIOTECH SYSTEMS</h2>
+            <p>The new era of antibiotics diagnostics</p>
+        
+        </section>
+        
     </section>
     
 </body>
