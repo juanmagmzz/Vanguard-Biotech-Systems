@@ -1,92 +1,573 @@
-html {
-    scroll-snap-type: y mandatory;
+@media (min-width: 500px) { 
+    html {
+        scroll-snap-type: y mandatory;
+    }
+    
+    #body {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        width: 100vw;
+        background-color: #242422;
+        overflow-x: hidden;
+    }
+    
+    #body::-webkit-scrollbar {
+        display: none;
+    }
+    
+    #body::before {
+        content: "";
+        background-color: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 182px;
+        opacity: 0.12;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+    }
+    
+    .section {
+        user-select: none;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+    
+    .article {
+        position: relative;
+        z-index: 1;
+        user-select: none;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    
+    #scroll-p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.4vw;
+        position: absolute;
+        bottom: 0;
+    }
+    
+    #chapter-p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.4vw;
+        position: absolute;
+        top: 0;
+    }
+    
+    #home h1 {
+        font-family: "Archivo Black", serif;
+        color: #e3e2de;
+        font-size: 14vw;
+        letter-spacing: 0.1vw;
+        margin: 0;
+    }
+    
+    #home h2 {
+        font-family: "Archivo Black", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-size: 6vw;
+        letter-spacing: 0.9vw;
+        margin: 0;
+    }
+    
+    #home-subtitle {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 4vw;
+        letter-spacing: 0.7vw;
+        margin: 6vw 0 0 0;
+    }
+    
+    #about {
+        position: relative;
+        height: auto !important;
+        min-height: 100vh;
+        padding: 10vw 0 10vw 0;
+    }
+    
+    #about h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 4vw;
+        letter-spacing: 0.7vw;
+        font-weight: lighter;
+        margin: 0;
+        margin-bottom: 5vw;
+    }
+    
+    #about p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: justify;
+        max-width: 1100px;
+        width: 90%;
+        margin: 0;
+    }
+
+    #features {
+        min-height: 100vh;
+        height: auto !important;
+        display: grid;
+        grid-template: 50% 50% / 33.33% 33.33% 33.33%;
+        padding: 5vw 0 5vw 0;
+    }
+
+    #features div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 5vw 0 5vw 0;
+    }
+
+    #features div h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 0vw;
+    }
+
+    #features div p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        width: 90%;
+        margin: 0 ;
+    }
+
+    .section-spz {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100vw;
+        min-height: 100vh;
+        overflow-x: auto; 
+        position: relative;
+        scroll-snap-type: x mandatory; 
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    
+    .section-spz > div {
+        flex: 0 0 100vw; /* Asegura que cada div ocupe el ancho completo de la pantalla */
+        height: 100vh; /* Altura completa */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente el contenido */
+        align-items: center; /* Centra horizontalmente el contenido */
+        scroll-snap-align: start; /* Ajusta el inicio de cada sección al scroll */
+        box-sizing: border-box;
+    }
+
+    #numbers div h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 7vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        margin: 0;
+    }
+
+    .p-n {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-style: italic;
+        font-size: 4vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        width: 90%;
+        margin: 0;
+    }
+
+    .p-spz {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        width: 90%;
+        margin: 4vw 0 0 0;
+    }
+
+    .scroll-numbers-p {
+        position: absolute;
+        bottom: 0;
+        right: 2vw;
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.4vw;
+    }
+
+    #team {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 10vw 0 10vw 0;
+    }
+
+    #team p{
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: justify;
+        max-width: 1100px;
+        width: 90%;
+        margin: 0;
+    }
+
+    #team h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 4vw;
+        letter-spacing: 0.7vw;
+        font-weight: lighter;
+        margin: 0;
+        margin-bottom: 5vw;
+    }
+
 }
 
-#body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: #242422;
-}
+@media (max-width: 500px) { 
+    html {
+        scroll-snap-type: y mandatory;
+    }
+    
+    #body {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        width: 100vw;
+        background-color: #242422;
+    }
+    
+    #body::-webkit-scrollbar {
+        display: none;
+    }
+    
+    #body::before {
+        content: "";
+        background-color: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 182px;
+        opacity: 0.12;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+    }
+    
+    .section {
+        user-select: none;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+    
+    .article {
+        position: relative;
+        z-index: 1;
+        user-select: none;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    
+    #scroll-p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-style: italic;
+        font-size: 3vw;
+        letter-spacing: 0.4vw;
+        position: absolute;
+        bottom: 0;
+    }
+    
+    #chapter-p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-style: italic;
+        font-size: 3vw;
+        letter-spacing: 0.4vw;
+        position: absolute;
+        top: 0;
+    }
+    
+    #home h1 {
+        font-family: "Archivo Black", serif;
+        color: #e3e2de;
+        font-size: 14vw;
+        letter-spacing: 0.1vw;
+        margin: 0;
+    }
+    
+    #home h2 {
+        font-family: "Archivo Black", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-size: 6vw;
+        letter-spacing: 0.9vw;
+        margin: 0;
+    }
+    
+    #home-subtitle {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 4vw;
+        letter-spacing: 0.7vw;
+        margin: 6vw 0 0 0;
+    }
+    
+    #about {
+        position: relative;
+        height: auto !important;
+        min-height: 100vh;
+    }
+    
+    #about h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 5vw;
+        letter-spacing: 0.7vw;
+        font-weight: lighter;
+        margin: 0;
+        margin-bottom: 6vw;
+        margin-top: 12vw;
+    }
+    
+    #about p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: justify;
+        max-width: 1100px;
+        width: 90%;
+        margin-bottom: 15vw;
+    }
 
-#body::-webkit-scrollbar {
-    display: none;
-}
+    #features {
+        min-height: 100vh;
+        height: auto !important;
+        display: grid;
+        grid-template: 16.67% / 100%;
+        padding: 5vw 0 5vw 0;
+    }
 
-#body::before {
-    content: "";
-    background-color: transparent;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 182px;
-    opacity: 0.12;
-    top: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-}
+    #features div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 5vw 0 5vw 0;
+    }
 
-#layout-content-block {
-    height: 100%;
-    width: 100%;
-}
+    #features div h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 5vw;
+        letter-spacing: 0.7vw;
+        font-weight: lighter;
+        margin: 0;
+        text-align: center;
+    }
 
-.section {
-    user-select: none;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
+    #features div p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        width: 90%;
+        margin: 0;
+        margin-bottom: 2vw;
+    }
 
-#home-main-section h1 {
-    font-family: "Archivo Black", serif;
-    color: #e3e2de;
-    font-size: 14vw;
-    letter-spacing: 0.1vw;
-    margin: 0;
-}
+    .section-spz {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100vw;
+        min-height: 100vh;
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; 
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    
+    .section-spz > div {
+        flex: 0 0 100vw; /* Asegura que cada div ocupe el ancho completo de la pantalla */
+        height: 100vh; /* Altura completa */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente el contenido */
+        align-items: center; /* Centra horizontalmente el contenido */
+        scroll-snap-align: start; /* Ajusta el inicio de cada sección al scroll */
+        box-sizing: border-box;
+    }
 
-#home-main-section h2 {
-    font-family: "Archivo Black", serif;
-    color: rgb(227, 226, 222, 0.5);
-    font-size: 6vw;
-    letter-spacing: 0.9vw;
-    margin: 0;
-}
+    #numbers div h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 10vw;
+        letter-spacing: 0.7vw;
+        font-weight: lighter;
+        margin: 0;
+        text-align: center;
+    }
 
-#home-main-section p {
-    font-family: "Playfair Display", serif;
-    color: rgb(227, 226, 222);
-    font-style: italic;
-    font-size: 4vw;
-    letter-spacing: 0.7vw;
-    margin: 6vw 0 0 0;
-}
+    .p-n {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-style: italic;
+        font-size: 6vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        width: 90%;
+        margin: 0;
+    }
 
-#home-main-section a {
-    font-family: "Playfair Display", serif;
-    color: #e3e2de;
-    background-color: transparent;
-    border: 1px solid #e3e2de;
-    padding: 10px 30px;
-    font-size: 20px;
-    text-decoration: none;
-    letter-spacing: 0.1vw;
-    margin: 6vw 0 0 0;
-}
+    .p-spz {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        font-size: 4vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        width: 90%;
+        margin: 4vw 0 0 0;
+    }
 
-.section-scroll-p {
-    font-family: "Playfair Display", serif;
-    color: rgb(227, 226, 222, 0.6);
-    font-style: italic;
-    font-size: 3vw;
-    letter-spacing: 0.7vw;
+    .scroll-numbers-p {
+        position: absolute;
+        bottom: 0;
+        right: 2vw;
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.5);
+        font-style: italic;
+        font-size: 4vw;
+        letter-spacing: 0.4vw;
+    }
+
+    #team {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+
+    #team p{
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: justify;
+        max-width: 1100px;
+        width: 90%;
+        margin-bottom: 15vw;
+    }
+
+    #team h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 5vw;
+        letter-spacing: 0.7vw;
+        font-weight: lighter;
+        margin: 0;
+        margin-bottom: 6vw;
+        margin-top: 12vw;
+    }
+    
 }
