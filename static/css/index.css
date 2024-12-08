@@ -1,7 +1,3 @@
-html {
-    scroll-snap-type: y mandatory;
-}
-
 #body {
     margin: 0;
     padding: 0;
@@ -42,8 +38,6 @@ html {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
 }
 
 #home-main-section h1 {
