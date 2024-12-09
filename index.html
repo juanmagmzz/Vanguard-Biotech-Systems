@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="static/css/index.css">
-    <script src="static/js/index.js"></script>
+    <script src="static/js/layout.js"></script>
 
     <meta name="google-site-verification" content="y4nu7Hq-5IVVR6O6zlOy4ZdEymoi5S0pW10lDeJfxr0" />
 
@@ -21,7 +21,11 @@
 
 <body id="body">
 
-    <section id="home" class="section">
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <section id="home" class="section" data-title="Vanguard Biotech Systems">
 
         <p id="chapter-p">~ Chapter one ~</p>
         <h1>VANGUARD</h1>
@@ -38,7 +42,7 @@
         </video>
     </article>
 
-    <section class="section" id="about">
+    <section class="section" id="about" data-title="About us">
         <h1>Vanguard Biotech Systems</h1>
         <p>In the race against time, every second counts. At Vanguard Biotech Systems, we are reimagining the way critical bacterial infections are diagnosed and treated. Our cutting-edge application empowers healthcare professionals to leap beyond traditional methods, delivering precise antibiotic recommendations within hours—not days.<br><br>
 
@@ -58,7 +62,7 @@
         </video>
     </article>
 
-    <section class="section" id="features">
+    <section class="section" id="features" data-title="The features">
         <div>
             <h1>Rapid Antibiotic Selection</h1>
             <p>~</p>
@@ -98,7 +102,7 @@
         </video>
     </article>
 
-    <section class="section-spz" id="numbers">
+    <section class="section-spz" id="numbers" data-title="The numbers">
         <div>
             <h1>5 Millions</h1>
             <p class="p-n">Lives saved per year at least</p>
@@ -131,7 +135,7 @@
             <p class="p-n">Global mission</p>
             <p class="p-spz">To revolutionize bacterial diagnostics, save lives, and lead the charge against antimicrobial resistance.</p>
         </div>
-        <p class="scroll-numbers-p">~ Scroll right ~</p>
+        <p class="scroll-numbers-p">></p>
     </section>
 
     <article class="article">
@@ -141,18 +145,25 @@
         </video>
     </article>
 
-    <section class="section" id="team">
-        <h1>Juan Manuel Gómez</h1>
-        <p>It is a true honor to welcome you to this space. More than just a page, this is an invitation to discover a vision that blends effort, innovation, and a deep commitment to meaningful change.
+    <section class="section" id="team" data-title="The team">
 
-            Throughout my journey, I have learned that success is not measured by what we possess but by our ability to face challenges with resilience and turn adversity into opportunity. Every step I’ve taken, every decision made, has been driven by a clear purpose: to create solutions that make a real and lasting difference in people’s lives.<br><br>
-            
-            My passion for science, technology, and social impact has led me to explore paths that demand perseverance, creativity, and an unwavering desire to build a better future. I firmly believe in the power of innovation as a tool to transform ideas into tangible realities and in the importance of combining knowledge with humanity to achieve meaningful progress.<br><br>
-            
-            The project I share with you is not just the result of months of work; it is the embodiment of a vision committed to excellence and continuous improvement. It is a commitment to a future where technology serves people, where solutions are accessible, efficient, and deeply human.<br><br>
-            
-            Thank you for taking the time to learn about this endeavor and for opening yourself to the possibility of believing in a brighter future. I trust that together we can overcome any limits and shape a world where innovation always serves the collective well-being.
-        </p>
+        <div class="image-container">
+        </div>
+
+        <div class="text-container">
+            <h1>Juan Manuel Gómez</h1>
+            <h2>Chief Executive Officer</h2>
+            <p>It is a true honor to welcome you to this space. More than just a page, this is an invitation to discover a vision that blends effort, innovation, and a deep commitment to meaningful change.
+
+                Throughout my journey, I have learned that success is not measured by what we possess but by our ability to face challenges with resilience and turn adversity into opportunity. Every step I’ve taken, every decision made, has been driven by a clear purpose: to create solutions that make a real and lasting difference in people’s lives.<br><br>
+                
+                My passion for science, technology, and social impact has led me to explore paths that demand perseverance, creativity, and an unwavering desire to build a better future. I firmly believe in the power of innovation as a tool to transform ideas into tangible realities and in the importance of combining knowledge with humanity to achieve meaningful progress.<br><br>
+                
+                The project I share with you is not just the result of months of work; it is the embodiment of a vision committed to excellence and continuous improvement. It is a commitment to a future where technology serves people, where solutions are accessible, efficient, and deeply human.<br><br>
+                
+                Thank you for taking the time to learn about this endeavor and for opening yourself to the possibility of believing in a brighter future.</p>
+        </div>
+
     </section>
 
     <article class="article">
