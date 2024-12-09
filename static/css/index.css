@@ -91,6 +91,7 @@
         font-size: 14vw;
         letter-spacing: 0.1vw;
         margin: 0;
+        text-shadow: #000 1px 1px 20px;
     }
     
     #home h2 {
@@ -346,21 +347,22 @@
     }
 
     #team {
+        position: relative;
         display: grid;
-        grid-template: 100% / 50% 50%;
+        grid-template: 100% / 100%;
         height: 100vh;
         min-height: 100vh;
     }
 
     .image-container {
-        position: relative;
+        position: absolute;
         height: 100%;
         width: 100%;
         background-image: url('../img/yoyoyoy.jpg');
         background-size: cover; /* Asegura que el fondo cubra todo el contenedor */
         overflow: hidden; /* Asegura que el texto no sobresalga del contenedor */
         background-position: center;
-        filter: saturate(0) brightness(0.6);
+        filter: saturate(0) brightness(0.3);
     }
     
     /* .image-container .text {
@@ -376,10 +378,10 @@
     } */
     
     .text-container {
+        z-index: 2;
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding: 5vw 0;
         overflow-y: auto; /* Permitir scroll vertical */
         height: 100%; /* Asegurar que el contenedor ocupe toda la altura disponible */
         box-sizing: border-box;
@@ -392,27 +394,23 @@
         font-family: "Playfair Display", serif;
         color: rgb(227, 226, 222);
         font-style: italic;
-        font-size: 3vw;
+        font-size: 5vw;
         letter-spacing: 0.7vw;
         font-weight: lighter;
         margin: 0;
-        text-align: center;
-        margin-bottom: 1vw;
-
+        margin-bottom: 2vw;
+        margin-top: 8vw;
     }
 
     .text-container h2 {
         font-family: "Playfair Display", serif;
         color: rgb(227, 226, 222, 0.5);
         font-style: italic;
-        font-size: 2vw;
-        letter-spacing: 0.2vw;
+        font-size: 3vw;
+        letter-spacing: 0.7vw;
         font-weight: lighter;
-        text-align: justify;
-        width: 90%;
         margin: 0;
-        text-align: center;
-        margin-bottom: 3vw;
+        margin-bottom: 6vw;
     }
 
     .text-container p {
@@ -423,10 +421,65 @@
         letter-spacing: 0.1vw;
         font-weight: lighter;
         text-align: justify;
-        width: 85%;
+        max-width: 1100px;
+        width: 90%;
         margin: 0;
+        margin-bottom: 10vw;
     }
 
+    #contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    #contact h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.2vw;
+        font-weight: lighter;
+        margin: 0;
+    }
+    
+    #contact p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        max-width: 1100px;
+        width: 90%;
+        margin: 0;
+        margin-bottom: 2vw;
+    }
+
+    #footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #footer h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        font-size: 2vw;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        max-width: 1100px;
+        width: 90%;
+        margin: 0;
+        margin-bottom: 2vw;
+    }
+
+
+    
 }
 
 @media (max-width: 500px) { 
@@ -773,23 +826,22 @@
         font-family: "Playfair Display", serif;
         color: rgb(227, 226, 222);
         font-style: italic;
-        font-size: 5vw;
+        font-size: 4vw;
         letter-spacing: 0.7vw;
         font-weight: lighter;
         margin: 0;
-        margin-bottom: 2vw;
-        margin-top: 12vw;
+        margin-bottom: 1vw;
     }
 
     .text-container h2 {
         font-family: "Playfair Display", serif;
         color: rgb(227, 226, 222, 0.5);
         font-style: italic;
-        font-size: 5vw;
+        font-size: 4vw;
         letter-spacing: 0.7vw;
         font-weight: lighter;
         margin: 0;
-        margin-bottom: 6vw;
+        margin-bottom: 5vw;
     }
 
     .text-container p {
@@ -803,5 +855,42 @@
         width: 90%;
         margin-bottom: 15vw;
     }
+
+    #contact {
+        position: relative;
+        height: auto !important;
+        min-height: 100vh;
+    }
     
+    #contact h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222);
+        font-style: italic;
+        font-size: 4vw;
+        letter-spacing: 0.7vw;
+        font-weight: lighter;
+        margin: 0;
+    }
+    
+    #contact p {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        letter-spacing: 0.1vw;
+        font-weight: lighter;
+        text-align: center;
+        max-width: 1100px;
+        width: 90%;
+    }
+
+    #footer h1 {
+        font-family: "Playfair Display", serif;
+        color: rgb(227, 226, 222, 0.7);
+        font-style: italic;
+        font-size: 4vw;
+        letter-spacing: 0.7vw;
+        font-weight: lighter;
+        margin: 0;
+    }
+
 }
